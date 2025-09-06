@@ -23,7 +23,7 @@ int main()
 
   if (max > 0)
   {
-    freverse(longest, reverse, len);
+    freverse(longest, reverse, max);
     printf("%s", longest);
     printf("%s", reverse);
   }
@@ -56,8 +56,12 @@ void copy(char to[], char from[])
 
 void freverse(char line[], char rev[], int len)
 {
-  for (int i = 0; i < len - 2; i++)
+  int i;
+
+  for (i = 0; i < len - 1; i++)
   {
     rev[i] = line[len - i - 2];
   }
+  rev[i++] = '\n';
+  rev[i] = '\0';
 }
